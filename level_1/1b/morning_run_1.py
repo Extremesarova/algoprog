@@ -1,6 +1,5 @@
 def main():
-    x = float(input())
-    y = float(input())
+    x, y = map(float, input().split())
 
     counter = 1
     mult = 0.7
