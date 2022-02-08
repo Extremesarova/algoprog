@@ -1,9 +1,11 @@
 def main():
     sequence_sum = 0
-    num = int(input())
-    while num != 0:
-        sequence_sum += num
+    while True:
         num = int(input())
+        if num == 0:
+            break
+        sequence_sum += num
+
     print(sequence_sum)
 
 

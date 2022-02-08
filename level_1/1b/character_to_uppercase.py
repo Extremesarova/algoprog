@@ -2,8 +2,8 @@ def main():
     char = input()
 
     char_code = ord(char)
-
-    upper_char = chr(char_code - 32) if 97 <= char_code <= 122 else char
+    difference = ord('a') - ord('A')
+    upper_char = chr(char_code - difference) if 'a' <= char <= 'z' else char
 
     print(upper_char)
 
