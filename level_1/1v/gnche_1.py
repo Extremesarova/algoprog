@@ -7,9 +7,7 @@ def main():
             print(i, end=" ")
             counter += 1
             if counter == n:
-                break
-        if counter == n:
-            break
+                return
 
 
 if __name__ == '__main__':
