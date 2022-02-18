@@ -1,22 +1,14 @@
-def get_comma(counter, i):
-    return [","] if counter == 2 and i != 0 else [""]
-
-
-def update_counter(counter):
-    return 0 if counter == 2 else counter + 1
-
-
 def add_commas(num):
     counter = 0
     lengths_num = len(num)
-    num_with_commas = []
+    num_with_commas = ""
 
     for i in range(lengths_num - 1, -1, -1):
-        digit = num[i]
-        num_with_commas = get_comma(counter, i) + [digit] + num_with_commas
-        counter = update_counter(counter)
+        comma = "," if counter == 2 and i != 0 else ""
+        num_with_commas += num[i] + comma
+        counter = 0 if counter == 2 else counter + 1
 
-    return "".join(num_with_commas)
+    return num_with_commas[::-1]
 
 
 def main():
