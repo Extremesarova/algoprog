@@ -1,17 +1,17 @@
 def get_time(seconds_init):
     seconds_in_hour = 60 * 60
-    minutes_in_hour = 60
+    seconds_in_minute = 60
     hours_in_day = 24
 
     hours_full = seconds_init // seconds_in_hour
     hours = hours_full % hours_in_day
 
-    seconds_left = (seconds_init - hours_full * seconds_in_hour)
+    seconds_left = seconds_init % seconds_in_hour
 
-    minutes = seconds_left // minutes_in_hour
-    seconds = (seconds_left - minutes * minutes_in_hour)
+    minutes = seconds_left // seconds_in_minute
+    seconds = seconds_left % seconds_in_minute
 
-    time = f"{hours}:{str(minutes).zfill(2)}:{str(seconds).zfill(2)}"
+    time = f"{hours}:{minutes // 10}{minutes % 10}:{seconds // 10}{seconds % 10}"
     return time
 
 
