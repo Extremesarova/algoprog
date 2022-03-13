@@ -1,6 +1,3 @@
-import matplotlib.pyplot as plt
-
-
 def get_string(n):
     letters = "ABCDEF"
     if n == 1:
@@ -22,9 +19,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-x1, y1, x2, y2 = 0, 0, 6, 4
-x1, y1, x2, y2 = 3, 3, -3, 3
-plt.plot((x1, x2), (y1, y2))
-plt.grid(True)
-plt.axis('equal')
