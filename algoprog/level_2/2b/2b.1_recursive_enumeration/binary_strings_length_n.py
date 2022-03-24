@@ -7,10 +7,13 @@ def find(a, k):
         if i == k:
             check(a)
             return
-        a[i] = 0
-        find_rec(i + 1)
-        a[i] = 1
-        find_rec(i + 1)
+        for j in range(2):
+            a[i] = j
+            find_rec(i + 1)
+        # a[i] = 0
+        # find_rec(i + 1)
+        # a[i] = 1
+        # find_rec(i + 1)
 
     find_rec(0)
 
