@@ -1,31 +1,37 @@
-from typing import List
-
-
 class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        max_profit = 0
-        l, r = 0, 1
+    def isalnum(self, c: str) -> bool:
+        return ("a" <= c.lower() <= "z") or ("0" <= c <= "9")
 
-        while r < len(prices):
-            if prices[l] < prices[r]:
-                profit = prices[r] - prices[l]
-                max_profit = max(profit, max_profit)
-            else:
-                l = r
+    def isPalindrome(self, s: str) -> bool:
+        l, r = 0, len(s) - 1
+        while l < r:
 
-            r += 1
+            while l < r and not self.isalnum(s[l]):
+                l += 1
+                continue
 
-        return max_profit
+            while r > l and not self.isalnum((s[r])):
+                r -= 1
+                continue
+
+            if s[l].lower() != s[r].lower():
+                return False
+
+            l += 1
+            r -= 1
+
+        return True
 
 
 def main():
     solution = Solution()
-    prices = list(map(int, input().split()))
-    res = solution.maxProfit(prices)
+    s = input()
+    res = solution.isPalindrome(s)
     print(res)
 
-    assert solution.maxProfit([7, 1, 5, 3, 6, 4]) == 5
-    assert solution.maxProfit([7, 6, 4, 3, 1]) == 0
+    assert solution.isPalindrome("A man, a plan, a canal: Panama") is True
+    assert solution.isPalindrome("race a car") is False
+    assert solution.isPalindrome(" ") is True
 
 
 if __name__ == '__main__':
