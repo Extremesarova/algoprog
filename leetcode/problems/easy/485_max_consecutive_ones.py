@@ -21,7 +21,7 @@ class Solution:
 def main():
     solution = Solution()
     nums = list(map(int, input().split()))
-    res = solution.findMaxConsecutiveOnes(nums=nums)
+    res = solution.findMaxConsecutiveOnes(nums)
     print(res)
 
     assert solution.findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]) == 3

@@ -29,7 +29,7 @@ class Solution:
 def main():
     solution = Solution()
     nums = list(map(int, input().split()))
-    res = solution.containsDuplicate_set(nums=nums)
+    res = solution.containsDuplicate_set(nums)
     print(res)
 
     assert solution.containsDuplicate_set([1, 2, 3, 1]) is True
