@@ -17,5 +17,5 @@ def main():
     assert get_pupils(7, 34) == 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

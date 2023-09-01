@@ -13,19 +13,23 @@ class PrefixSum:
     def _init_prefix_sum(self):
         for i in range(1, self.num_rows):
             for j in range(1, self.num_cols):
-                self._pref[i][j] = self.initial[i - 1][j - 1] \
-                                   + self._pref[i - 1][j] \
-                                   + self._pref[i][j - 1] \
-                                   - self._pref[i - 1][j - 1]
+                self._pref[i][j] = (
+                    self.initial[i - 1][j - 1]
+                    + self._pref[i - 1][j]
+                    + self._pref[i][j - 1]
+                    - self._pref[i - 1][j - 1]
+                )
 
     def get_prefix_sum_list(self) -> np.array:
         return self._pref
 
     def get_range_sum_inclusively(self, x1, y1, x2, y2):
-        return self._pref[x2][y2] \
-               - self._pref[x1 - 1][y2] \
-               - self._pref[x2][y1 - 1] \
-               + self._pref[x1 - 1][y1 - 1]
+        return (
+            self._pref[x2][y2]
+            - self._pref[x1 - 1][y2]
+            - self._pref[x2][y1 - 1]
+            + self._pref[x1 - 1][y1 - 1]
+        )
 
 
 def main():

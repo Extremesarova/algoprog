@@ -25,7 +25,7 @@ def main():
     for _ in range(k):
         l_r_tuple_list.append(tuple(map(int, input().split())))
 
-    for (l, r) in l_r_tuple_list:
+    for l, r in l_r_tuple_list:
         print(get_zero_counts(prefix_count_zero, l, r))
 
     # assert get_prefix_array([0, 0, 0, 0, 2]) == [0, 1, 2, 3, 4, 4]
@@ -35,5 +35,5 @@ def main():
     # assert get_zero_counts(get_prefix_array([0, 0, 0, 0, 2]), 4, 5) == 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -12,4 +12,3 @@ class SuffixSum:
 
     def get_suffix_sum_list(self) -> list:
         return self._suffix_sum
-
