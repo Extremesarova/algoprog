@@ -13,23 +13,23 @@ def get_range_sum_inclusively(prefix_array, left, right):
 
 
 def main():
-    n, m = map(int, input().split())
-    a = list(map(int, input().split()))
+    # n, m = map(int, input().split())
+    # a = list(map(int, input().split()))
 
-    prefix_sum = get_prefix_array(a)
+    # prefix_sum = get_prefix_array(a)
 
-    x_y_tuple_list = []
-    for _ in range(m):
-        x_y_tuple_list.append(tuple(map(int, input().split())))
+    # x_y_tuple_list = []
+    # for _ in range(m):
+    #     x_y_tuple_list.append(tuple(map(int, input().split())))
 
-    for x, y in x_y_tuple_list:
-        print(get_range_sum_inclusively(prefix_sum, x, y))
+    # for x, y in x_y_tuple_list:
+    #     print(get_range_sum_inclusively(prefix_sum, x, y))
 
-    # assert get_prefix_array(a) == [0, 1, 3, 6, 10, 15]
-    # assert get_range_sum_inclusively(prefix_sum, 1, 5) == 15
-    # assert get_range_sum_inclusively(prefix_sum, 2, 4) == 9
-    # assert get_range_sum_inclusively(prefix_sum, 3, 5) == 12
-    # assert get_range_sum_inclusively(prefix_sum, 1, 2) == 3
+    assert get_prefix_array([1, 2, 3, 4, 5]) == [0, 1, 3, 6, 10, 15]
+    assert get_range_sum_inclusively([0, 1, 3, 6, 10, 15], 1, 5) == 15
+    assert get_range_sum_inclusively([0, 1, 3, 6, 10, 15], 2, 4) == 9
+    assert get_range_sum_inclusively([0, 1, 3, 6, 10, 15], 3, 5) == 12
+    assert get_range_sum_inclusively([0, 1, 3, 6, 10, 15], 1, 2) == 3
 
 
 if __name__ == "__main__":
